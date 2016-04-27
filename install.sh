@@ -2,10 +2,10 @@
 
 # fix for "tar: unable to record current working directory: No such file or directory"
 untar() {
-  DIR="$@"
-  cd "$DIR" && sudo tar xpo -C $DIR 
+  cd "$@" && sudo tar xpo
 }
 
+# https://developer.apple.com/library/mac/documentation/Security/Conceptual/System_Integrity_Protection_Guide/KernelExtensions/KernelExtensions.html
 csrutil status
 
 DIRS="/System/Library/Extensions/ /Library/Extensions/"
